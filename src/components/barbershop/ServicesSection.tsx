@@ -32,7 +32,7 @@ export const ServicesSection: React.FC = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center space-y-3 max-w-2xl mx-auto">
-          <Badge className="border-amber-500/30 bg-amber-500/10 text-amber-400 text-xs uppercase tracking-wider font-semibold">
+          <Badge className="border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs uppercase tracking-wider font-semibold">
             Tabela de Serviços & Valores
           </Badge>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-zinc-50">
@@ -51,7 +51,7 @@ export const ServicesSection: React.FC = () => {
               onClick={() => setActiveCategory(cat.id)}
               className={`rounded-full px-4 py-2 text-xs font-semibold transition-all ${
                 activeCategory === cat.id
-                  ? "bg-amber-500 text-zinc-950 shadow-lg shadow-amber-500/20"
+                  ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
                   : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200 border border-zinc-800"
               }`}
             >
@@ -67,13 +67,13 @@ export const ServicesSection: React.FC = () => {
               key={service.id}
               className={`group relative flex flex-col justify-between rounded-2xl border p-5 transition-all duration-300 ${
                 service.popular
-                  ? "border-amber-500/50 bg-gradient-to-b from-zinc-900 via-zinc-900/90 to-zinc-950 shadow-xl shadow-amber-500/5"
+                  ? "border-blue-500/50 bg-gradient-to-b from-zinc-900 via-zinc-900/90 to-zinc-950 shadow-xl shadow-blue-500/5"
                   : "border-zinc-800/80 bg-zinc-900/50 hover:border-zinc-700 hover:bg-zinc-900"
               }`}
             >
               {service.popular && (
                 <div className="absolute -top-3 right-4">
-                  <Badge className="bg-amber-500 text-zinc-950 font-bold text-[10px] shadow-sm uppercase tracking-wide border-0">
+                  <Badge className="bg-blue-600 text-white font-bold text-[10px] shadow-sm uppercase tracking-wide border-0">
                     ★ Destaque
                   </Badge>
                 </div>
@@ -81,7 +81,7 @@ export const ServicesSection: React.FC = () => {
 
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium text-amber-400 uppercase tracking-wider">
+                  <span className="text-xs font-medium text-blue-400 uppercase tracking-wider">
                     {service.category}
                   </span>
                   <div className="flex items-center gap-1 text-xs text-zinc-400">
@@ -90,7 +90,7 @@ export const ServicesSection: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="mt-2 font-serif text-lg font-bold text-zinc-100 group-hover:text-amber-400 transition-colors">
+                <h3 className="mt-2 font-serif text-lg font-bold text-zinc-100 group-hover:text-blue-400 transition-colors">
                   {service.name}
                 </h3>
 
@@ -102,7 +102,7 @@ export const ServicesSection: React.FC = () => {
               <div className="mt-6 border-t border-zinc-800/80 pt-4 flex items-center justify-between">
                 <div>
                   <span className="text-[10px] text-zinc-500 block uppercase">Investimento</span>
-                  <span className="font-mono text-xl font-extrabold text-amber-400">
+                  <span className="font-mono text-xl font-extrabold text-blue-400">
                     R$ {service.price.toFixed(2).replace(".", ",")}
                   </span>
                 </div>
@@ -110,7 +110,7 @@ export const ServicesSection: React.FC = () => {
                 <Button
                   size="sm"
                   onClick={() => handleBookService(service)}
-                  className="bg-zinc-800 font-semibold text-zinc-200 hover:bg-amber-500 hover:text-zinc-950 text-xs transition-all"
+                  className="bg-zinc-800 font-semibold text-zinc-200 hover:bg-blue-600 hover:text-white text-xs transition-all"
                 >
                   Agendar Este
                   <ArrowRight className="ml-1 h-3.5 w-3.5" />

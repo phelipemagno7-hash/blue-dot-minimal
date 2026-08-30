@@ -34,7 +34,7 @@ function BarbershopContent() {
   const { activeView } = useBarbershop();
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-amber-500 selection:text-zinc-950 font-sans">
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-blue-600 selection:text-white font-sans">
       <Navbar />
 
       {activeView === "client" ? (

@@ -12,7 +12,7 @@ export const ReviewsSection: React.FC = () => {
         {/* Header with summary stats */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-12 border-b border-zinc-900">
           <div className="space-y-3 max-w-xl">
-            <Badge className="border-amber-500/30 bg-amber-500/10 text-amber-400 text-xs uppercase tracking-wider font-semibold">
+            <Badge className="border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs uppercase tracking-wider font-semibold">
               Depoimentos Reais
             </Badge>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-zinc-50">
@@ -26,8 +26,8 @@ export const ReviewsSection: React.FC = () => {
           {/* Rating Summary Card */}
           <div className="flex items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 self-start md:self-auto">
             <div className="text-center border-r border-zinc-800 pr-4">
-              <div className="font-mono text-3xl font-extrabold text-amber-400">{info.rating}</div>
-              <div className="flex text-amber-400 text-xs mt-1">
+              <div className="font-mono text-3xl font-extrabold text-blue-400">{info.rating}</div>
+              <div className="flex text-blue-400 text-xs mt-1">
                 {"★★★★★".split("").map((s, i) => (
                   <span key={i}>{s}</span>
                 ))}
@@ -48,10 +48,10 @@ export const ReviewsSection: React.FC = () => {
               className="relative flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 transition-all hover:bg-zinc-900/80 hover:border-zinc-700"
             >
               <div>
-                <Quote className="h-6 w-6 text-amber-500/30 mb-3" />
-                <div className="flex text-amber-400 text-sm mb-2">
+                <Quote className="h-6 w-6 text-blue-500/30 mb-3" />
+                <div className="flex text-blue-400 text-sm mb-2">
                   {Array.from({ length: rev.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                    <Star key={i} className="h-4 w-4 fill-blue-400 text-blue-400" />
                   ))}
                 </div>
                 <p className="text-xs text-zinc-300 italic leading-relaxed">
@@ -64,7 +64,7 @@ export const ReviewsSection: React.FC = () => {
                   <img
                     src={rev.avatar}
                     alt={rev.author}
-                    className="h-9 w-9 rounded-full object-cover border border-amber-500/30"
+                    className="h-9 w-9 rounded-full object-cover border border-blue-500/30"
                   />
                   <div>
                     <h4 className="text-xs font-bold text-zinc-200">{rev.author}</h4>

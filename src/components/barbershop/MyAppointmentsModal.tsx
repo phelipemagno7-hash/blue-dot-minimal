@@ -45,11 +45,11 @@ export const MyAppointmentsModal: React.FC = () => {
   const getStatusBadge = (status: AppointmentStatus) => {
     switch (status) {
       case "confirmed":
-        return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Confirmado</Badge>;
+        return <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">Confirmado</Badge>;
       case "in_progress":
-        return <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30">Em Atendimento</Badge>;
+        return <Badge className="bg-sky-500/20 text-sky-400 border-sky-500/30">Em Atendimento</Badge>;
       case "completed":
-        return <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">Concluído</Badge>;
+        return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Concluído</Badge>;
       case "cancelled":
         return <Badge className="bg-red-500/20 text-red-400 border-red-500/30">Cancelado</Badge>;
     }
@@ -66,8 +66,8 @@ export const MyAppointmentsModal: React.FC = () => {
     <Dialog open={myAppointmentsModalOpen} onOpenChange={setMyAppointmentsModalOpen}>
       <DialogContent className="max-w-xl border-zinc-800 bg-zinc-950 p-0 text-zinc-100 shadow-2xl flex flex-col max-h-[85vh] overflow-hidden">
         <DialogHeader className="border-b border-zinc-800 bg-zinc-900/80 px-6 py-4">
-          <DialogTitle className="flex items-center gap-2 text-lg font-serif text-amber-400">
-            <Calendar className="h-5 w-5 text-amber-400" />
+          <DialogTitle className="flex items-center gap-2 text-lg font-serif text-blue-400">
+            <Calendar className="h-5 w-5 text-blue-400" />
             Meus Agendamentos
           </DialogTitle>
           <DialogDescription className="text-xs text-zinc-400">
@@ -86,13 +86,13 @@ export const MyAppointmentsModal: React.FC = () => {
                   setPhoneSearch(e.target.value);
                   setHasSearched(true);
                 }}
-                className="border-zinc-800 bg-zinc-900 text-zinc-100 focus:border-amber-500 pl-9 text-sm"
+                className="border-zinc-800 bg-zinc-900 text-zinc-100 focus:border-blue-500 pl-9 text-sm"
               />
               <Phone className="absolute left-3 top-2.5 h-4 w-4 text-zinc-500" />
             </div>
             <Button
               onClick={() => setHasSearched(true)}
-              className="bg-amber-500 font-bold text-zinc-950 hover:bg-amber-400 text-xs px-4"
+              className="bg-blue-600 font-bold text-white hover:bg-blue-500 text-xs px-4 shadow-sm shadow-blue-500/20"
             >
               <Search className="mr-1.5 h-3.5 w-3.5" />
               Buscar
@@ -111,7 +111,7 @@ export const MyAppointmentsModal: React.FC = () => {
                       setPhoneSearch(p);
                       setHasSearched(true);
                     }}
-                    className="rounded-lg border border-zinc-700 bg-zinc-800/80 px-2.5 py-1 text-[11px] text-amber-400 hover:border-amber-500"
+                    className="rounded-lg border border-zinc-700 bg-zinc-800/80 px-2.5 py-1 text-[11px] text-blue-400 hover:border-blue-500"
                   >
                     {p}
                   </button>
@@ -136,7 +136,7 @@ export const MyAppointmentsModal: React.FC = () => {
                       setMyAppointmentsModalOpen(false);
                       setBookingWizardOpen(true);
                     }}
-                    className="mt-4 bg-amber-500 text-zinc-950 font-bold text-xs"
+                    className="mt-4 bg-blue-600 text-white font-bold text-xs hover:bg-blue-500"
                   >
                     Fazer um Agendamento Agora
                   </Button>
@@ -154,7 +154,7 @@ export const MyAppointmentsModal: React.FC = () => {
                     >
                       <div className="flex items-center justify-between border-b border-zinc-800 pb-2.5">
                         <div className="flex items-center gap-2">
-                          <span className="font-mono text-sm font-bold text-amber-400">{app.code}</span>
+                          <span className="font-mono text-sm font-bold text-blue-400">{app.code}</span>
                           <span className="text-xs text-zinc-400">• {app.customerName}</span>
                         </div>
                         {getStatusBadge(app.status)}
@@ -176,7 +176,7 @@ export const MyAppointmentsModal: React.FC = () => {
                       </div>
 
                       <div className="mt-3.5 flex items-center justify-between border-t border-zinc-800/80 pt-2.5">
-                        <span className="font-mono text-sm font-bold text-amber-400">
+                        <span className="font-mono text-sm font-bold text-blue-400">
                           R$ {app.totalPrice.toFixed(2).replace(".", ",")}
                         </span>
 

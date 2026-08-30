@@ -120,11 +120,11 @@ export const AdminDashboard: React.FC = () => {
   const getStatusBadge = (status: AppointmentStatus) => {
     switch (status) {
       case "confirmed":
-        return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Confirmado</Badge>;
+        return <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">Confirmado</Badge>;
       case "in_progress":
-        return <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30">Em Atendimento</Badge>;
+        return <Badge className="bg-sky-500/20 text-sky-400 border-sky-500/30">Em Atendimento</Badge>;
       case "completed":
-        return <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">Finalizado</Badge>;
+        return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Finalizado</Badge>;
       case "cancelled":
         return <Badge className="bg-red-500/20 text-red-400 border-red-500/30">Cancelado</Badge>;
     }
@@ -137,8 +137,8 @@ export const AdminDashboard: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-zinc-800 pb-5">
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-serif text-2xl font-bold text-amber-400">Painel do Barbeiro & Gestão</span>
-              <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/40">Gerencial</Badge>
+              <span className="font-serif text-2xl font-bold text-blue-400">Painel do Barbeiro & Gestão</span>
+              <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/40">Gerencial</Badge>
             </div>
             <p className="text-xs text-zinc-400 mt-1">
               Controle de atendimentos, faturamento do dia, bloqueios e encaixes rápidos.
@@ -149,7 +149,7 @@ export const AdminDashboard: React.FC = () => {
             <Button
               size="sm"
               onClick={() => setWalkInModalOpen(true)}
-              className="bg-amber-500 font-bold text-zinc-950 hover:bg-amber-400 text-xs"
+              className="bg-blue-600 font-bold text-white hover:bg-blue-500 text-xs shadow-md shadow-blue-600/20"
             >
               <PlusCircle className="mr-1.5 h-4 w-4" />
               Novo Encaixe Balcão
@@ -159,9 +159,9 @@ export const AdminDashboard: React.FC = () => {
               variant="outline"
               size="sm"
               onClick={() => setBlockModalOpen(true)}
-              className="border-zinc-700 bg-zinc-900 text-zinc-300 hover:bg-zinc-800 text-xs"
+              className="border-zinc-700 bg-zinc-900 text-zinc-300 hover:bg-zinc-800 hover:text-blue-400 text-xs"
             >
-              <Lock className="mr-1.5 h-3.5 w-3.5 text-amber-400" />
+              <Lock className="mr-1.5 h-3.5 w-3.5 text-blue-400" />
               Bloquear Horário
             </Button>
 
@@ -192,9 +192,9 @@ export const AdminDashboard: React.FC = () => {
           <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
             <div className="flex items-center justify-between text-zinc-400">
               <span className="text-xs">Total Agendados</span>
-              <Users className="h-4 w-4 text-amber-400" />
+              <Users className="h-4 w-4 text-blue-400" />
             </div>
-            <div className="mt-2 font-mono text-2xl font-bold text-amber-400">
+            <div className="mt-2 font-mono text-2xl font-bold text-blue-400">
               {allDailyApps.length}
             </div>
             <p className="text-[10px] text-zinc-500 mt-1">{confirmedCount} pendentes de corte</p>
@@ -203,9 +203,9 @@ export const AdminDashboard: React.FC = () => {
           <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
             <div className="flex items-center justify-between text-zinc-400">
               <span className="text-xs">Em Atendimento</span>
-              <PlayCircle className="h-4 w-4 text-amber-500" />
+              <PlayCircle className="h-4 w-4 text-sky-400" />
             </div>
-            <div className="mt-2 font-mono text-2xl font-bold text-amber-500">
+            <div className="mt-2 font-mono text-2xl font-bold text-sky-400">
               {inProgressCount}
             </div>
             <p className="text-[10px] text-zinc-500 mt-1">Na cadeira agora</p>
@@ -214,9 +214,9 @@ export const AdminDashboard: React.FC = () => {
           <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
             <div className="flex items-center justify-between text-zinc-400">
               <span className="text-xs">Finalizados</span>
-              <CheckCircle2 className="h-4 w-4 text-blue-400" />
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
             </div>
-            <div className="mt-2 font-mono text-2xl font-bold text-blue-400">
+            <div className="mt-2 font-mono text-2xl font-bold text-emerald-400">
               {completedCount}
             </div>
             <p className="text-[10px] text-zinc-500 mt-1">Atendimentos concluídos</p>
@@ -228,7 +228,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3">
             {/* Date Picker Input */}
             <div className="flex items-center gap-2">
-              <CalendarIcon className="h-4 w-4 text-amber-400" />
+              <CalendarIcon className="h-4 w-4 text-blue-400" />
               <Input
                 type="date"
                 value={selectedDate}
@@ -272,7 +272,7 @@ export const AdminDashboard: React.FC = () => {
           </div>
 
           <div className="text-xs text-zinc-400">
-            Exibindo <strong className="text-amber-400">{dailyAppointments.length}</strong> agendamentos
+            Exibindo <strong className="text-blue-400">{dailyAppointments.length}</strong> agendamentos
           </div>
         </div>
 
@@ -297,14 +297,14 @@ export const AdminDashboard: React.FC = () => {
                 >
                   {/* Left info */}
                   <div className="flex items-start gap-3.5">
-                    <div className="flex h-12 w-12 flex-col items-center justify-center rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono flex-shrink-0">
+                    <div className="flex h-12 w-12 flex-col items-center justify-center rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono flex-shrink-0">
                       <Clock className="h-3.5 w-3.5 mb-0.5" />
                       <span className="text-xs font-bold">{app.timeSlot}</span>
                     </div>
 
                     <div>
                       <div className="flex items-center gap-2.5">
-                        <span className="font-mono text-xs font-bold text-amber-400">{app.code}</span>
+                        <span className="font-mono text-xs font-bold text-blue-400">{app.code}</span>
                         <h4 className="text-sm font-semibold text-zinc-100">{app.customerName}</h4>
                         {getStatusBadge(app.status)}
                       </div>
@@ -314,7 +314,7 @@ export const AdminDashboard: React.FC = () => {
                         <span>•</span>
                         <span>✂️ {app.services.map((s) => s.name).join(" + ")}</span>
                         <span>•</span>
-                        <span className="text-amber-300">💈 {barberName}</span>
+                        <span className="text-blue-300">💈 {barberName}</span>
                       </div>
 
                       {app.customerNotes && (
@@ -328,7 +328,7 @@ export const AdminDashboard: React.FC = () => {
                   {/* Right Actions & Price */}
                   <div className="flex flex-wrap items-center justify-between lg:justify-end gap-3 border-t lg:border-t-0 border-zinc-800 pt-2 lg:pt-0">
                     <div className="text-right">
-                      <span className="font-mono text-sm font-bold text-amber-400">
+                      <span className="font-mono text-sm font-bold text-blue-400">
                         R$ {app.totalPrice.toFixed(2).replace(".", ",")}
                       </span>
                       <span className="text-[10px] text-zinc-500 block uppercase">
@@ -345,7 +345,7 @@ export const AdminDashboard: React.FC = () => {
                             updateAppointmentStatus(app.id, "in_progress");
                             toast.info(`Atendimento ${app.code} iniciado.`);
                           }}
-                          className="bg-amber-500 text-zinc-950 font-bold text-xs hover:bg-amber-400 h-8"
+                          className="bg-blue-600 text-white font-bold text-xs hover:bg-blue-500 h-8 shadow-sm shadow-blue-600/20"
                         >
                           <PlayCircle className="mr-1 h-3.5 w-3.5" />
                           Iniciar
@@ -359,7 +359,7 @@ export const AdminDashboard: React.FC = () => {
                             updateAppointmentStatus(app.id, "completed");
                             toast.success(`Atendimento ${app.code} finalizado com sucesso!`);
                           }}
-                          className="bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-500 h-8"
+                          className="bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-500 h-8 shadow-sm"
                         >
                           <CheckCircle2 className="mr-1 h-3.5 w-3.5" />
                           Concluir
@@ -393,7 +393,7 @@ export const AdminDashboard: React.FC = () => {
         {blockedSlots.length > 0 && (
           <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 space-y-3">
             <h3 className="text-sm font-semibold text-zinc-200 flex items-center gap-2">
-              <Lock className="h-4 w-4 text-amber-400" />
+              <Lock className="h-4 w-4 text-blue-400" />
               Horários Bloqueados / Intervalos
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
@@ -403,7 +403,7 @@ export const AdminDashboard: React.FC = () => {
                   className="flex items-center justify-between rounded-lg border border-zinc-800 bg-zinc-950 p-3 text-xs"
                 >
                   <div>
-                    <span className="font-semibold text-amber-400">{b.timeSlot}</span>
+                    <span className="font-semibold text-blue-400">{b.timeSlot}</span>
                     <span className="text-zinc-400 ml-2">({b.date})</span>
                     <p className="text-[11px] text-zinc-500">{b.reason}</p>
                   </div>
@@ -430,7 +430,7 @@ export const AdminDashboard: React.FC = () => {
       <Dialog open={walkInModalOpen} onOpenChange={setWalkInModalOpen}>
         <DialogContent className="border-zinc-800 bg-zinc-950 text-zinc-100 max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-base font-serif text-amber-400 flex items-center gap-2">
+            <DialogTitle className="text-base font-serif text-blue-400 flex items-center gap-2">
               <PlusCircle className="h-5 w-5" />
               Novo Encaixe no Balcão (Walk-In)
             </DialogTitle>
@@ -443,7 +443,7 @@ export const AdminDashboard: React.FC = () => {
                 placeholder="Ex: João Silva"
                 value={walkInName}
                 onChange={(e) => setWalkInName(e.target.value)}
-                className="mt-1 border-zinc-800 bg-zinc-900 text-xs text-zinc-100"
+                className="mt-1 border-zinc-800 bg-zinc-900 text-xs text-zinc-100 focus:border-blue-500"
               />
             </div>
 
@@ -453,7 +453,7 @@ export const AdminDashboard: React.FC = () => {
                 placeholder="(11) 99999-9999"
                 value={walkInPhone}
                 onChange={(e) => setWalkInPhone(e.target.value)}
-                className="mt-1 border-zinc-800 bg-zinc-900 text-xs text-zinc-100"
+                className="mt-1 border-zinc-800 bg-zinc-900 text-xs text-zinc-100 focus:border-blue-500"
               />
             </div>
 
@@ -520,7 +520,7 @@ export const AdminDashboard: React.FC = () => {
             <Button
               size="sm"
               onClick={handleCreateWalkIn}
-              className="bg-amber-500 text-zinc-950 font-bold text-xs hover:bg-amber-400"
+              className="bg-blue-600 text-white font-bold text-xs hover:bg-blue-500 shadow-sm"
             >
               Criar Agendamento
             </Button>
@@ -532,7 +532,7 @@ export const AdminDashboard: React.FC = () => {
       <Dialog open={blockModalOpen} onOpenChange={setBlockModalOpen}>
         <DialogContent className="border-zinc-800 bg-zinc-950 text-zinc-100 max-w-sm">
           <DialogHeader>
-            <DialogTitle className="text-base font-serif text-amber-400 flex items-center gap-2">
+            <DialogTitle className="text-base font-serif text-blue-400 flex items-center gap-2">
               <Lock className="h-4 w-4" />
               Bloquear Horário na Agenda
             </DialogTitle>
@@ -578,7 +578,7 @@ export const AdminDashboard: React.FC = () => {
                 value={blockReason}
                 onChange={(e) => setBlockReason(e.target.value)}
                 placeholder="Ex: Almoço, Folga, Reunião"
-                className="mt-1 border-zinc-800 bg-zinc-900 text-xs"
+                className="mt-1 border-zinc-800 bg-zinc-900 text-xs focus:border-blue-500"
               />
             </div>
           </div>
@@ -595,7 +595,7 @@ export const AdminDashboard: React.FC = () => {
             <Button
               size="sm"
               onClick={handleBlockSlot}
-              className="bg-amber-500 text-zinc-950 font-bold text-xs hover:bg-amber-400"
+              className="bg-blue-600 text-white font-bold text-xs hover:bg-blue-500"
             >
               Confirmar Bloqueio
             </Button>

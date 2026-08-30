@@ -11,7 +11,7 @@ export const TeamSection: React.FC = () => {
     <section id="barbeiros" className="relative bg-zinc-900/40 py-20 border-t border-zinc-800/60">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-3 max-w-2xl mx-auto">
-          <Badge className="border-amber-500/30 bg-amber-500/10 text-amber-400 text-xs uppercase tracking-wider font-semibold">
+          <Badge className="border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs uppercase tracking-wider font-semibold">
             Mestres da Navalha
           </Badge>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-zinc-50">
@@ -26,7 +26,7 @@ export const TeamSection: React.FC = () => {
           {barbers.map((barber) => (
             <div
               key={barber.id}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 p-5 transition-all duration-300 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/5"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 p-5 transition-all duration-300 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/5"
             >
               <div>
                 {/* Photo with Overlay Badge */}
@@ -39,8 +39,8 @@ export const TeamSection: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-80" />
 
                   {/* Rating Tag */}
-                  <div className="absolute bottom-2.5 left-2.5 flex items-center gap-1 rounded-full bg-zinc-950/80 px-2.5 py-1 text-xs font-semibold text-amber-400 backdrop-blur-md border border-amber-500/30">
-                    <Star className="h-3.5 w-3.5 fill-amber-400" />
+                  <div className="absolute bottom-2.5 left-2.5 flex items-center gap-1 rounded-full bg-zinc-950/80 px-2.5 py-1 text-xs font-semibold text-blue-400 backdrop-blur-md border border-blue-500/30">
+                    <Star className="h-3.5 w-3.5 fill-blue-400" />
                     <span>{barber.rating}</span>
                     <span className="text-zinc-500 text-[10px]">({barber.reviewsCount})</span>
                   </div>
@@ -48,10 +48,10 @@ export const TeamSection: React.FC = () => {
 
                 {/* Info */}
                 <div className="mt-4">
-                  <h3 className="font-serif text-base font-bold text-zinc-100 group-hover:text-amber-400 transition-colors">
+                  <h3 className="font-serif text-base font-bold text-zinc-100 group-hover:text-blue-400 transition-colors">
                     {barber.name}
                   </h3>
-                  <p className="text-xs font-medium text-amber-400/90">{barber.role}</p>
+                  <p className="text-xs font-medium text-blue-400/90">{barber.role}</p>
 
                   <p className="mt-2 text-xs text-zinc-400 line-clamp-3 leading-relaxed">
                     {barber.bio}
@@ -76,7 +76,7 @@ export const TeamSection: React.FC = () => {
                 <Button
                   size="sm"
                   onClick={() => setBookingWizardOpen(true)}
-                  className="w-full bg-zinc-900 font-semibold text-zinc-300 hover:bg-amber-500 hover:text-zinc-950 text-xs border border-zinc-800"
+                  className="w-full bg-zinc-900 font-semibold text-zinc-300 hover:bg-blue-600 hover:text-white text-xs border border-zinc-800 transition-all"
                 >
                   <Calendar className="mr-1.5 h-3.5 w-3.5" />
                   Agendar com {barber.name.split(" ")[0]}

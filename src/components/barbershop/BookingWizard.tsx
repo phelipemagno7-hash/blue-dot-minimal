@@ -11,7 +11,6 @@ import { Badge } from "../ui/badge";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import {
   Scissors,
   User,
@@ -178,8 +177,8 @@ export const BookingWizard: React.FC = () => {
         {/* Header with Progress Steps */}
         <div className="border-b border-zinc-800 bg-zinc-900/80 px-6 py-4">
           <DialogHeader className="mb-3">
-            <DialogTitle className="flex items-center gap-2 text-xl font-serif text-amber-400">
-              <Scissors className="h-5 w-5 text-amber-400" />
+            <DialogTitle className="flex items-center gap-2 text-xl font-serif text-blue-400">
+              <Scissors className="h-5 w-5 text-blue-400" />
               Agendar Horário
             </DialogTitle>
             <DialogDescription className="text-xs text-zinc-400">
@@ -203,11 +202,11 @@ export const BookingWizard: React.FC = () => {
               <div key={step.num} className="flex flex-col gap-1">
                 <div
                   className={`h-1.5 w-full rounded-full transition-all ${
-                    currentStep >= step.num ? "bg-amber-500" : "bg-zinc-800"
+                    currentStep >= step.num ? "bg-blue-500" : "bg-zinc-800"
                   }`}
                 />
                 <span className={`text-[10px] font-medium hidden sm:inline ${
-                  currentStep >= step.num ? "text-amber-400" : "text-zinc-500"
+                  currentStep >= step.num ? "text-blue-400" : "text-zinc-500"
                 }`}>
                   {step.label}
                 </span>
@@ -236,7 +235,7 @@ export const BookingWizard: React.FC = () => {
                     onClick={() => setSelectedCategory(cat.id)}
                     className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
                       selectedCategory === cat.id
-                        ? "bg-amber-500 text-zinc-950 font-bold"
+                        ? "bg-blue-600 text-white font-bold shadow-sm shadow-blue-500/20"
                         : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200"
                     }`}
                   >
@@ -255,7 +254,7 @@ export const BookingWizard: React.FC = () => {
                       onClick={() => toggleService(service)}
                       className={`group relative flex cursor-pointer items-start justify-between rounded-xl border p-3.5 transition-all ${
                         isSelected
-                          ? "border-amber-500/80 bg-amber-500/10 shadow-sm shadow-amber-500/10"
+                          ? "border-blue-500/80 bg-blue-500/10 shadow-sm shadow-blue-500/10"
                           : "border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:bg-zinc-900"
                       }`}
                     >
@@ -263,7 +262,7 @@ export const BookingWizard: React.FC = () => {
                         <div
                           className={`mt-0.5 flex h-5 w-5 items-center justify-center rounded-md border transition-all ${
                             isSelected
-                              ? "border-amber-500 bg-amber-500 text-zinc-950"
+                              ? "border-blue-500 bg-blue-600 text-white"
                               : "border-zinc-700 bg-zinc-800 text-transparent group-hover:border-zinc-500"
                           }`}
                         >
@@ -273,7 +272,7 @@ export const BookingWizard: React.FC = () => {
                           <div className="flex items-center gap-2">
                             <h4 className="text-sm font-semibold text-zinc-100">{service.name}</h4>
                             {service.popular && (
-                              <Badge className="border-amber-500/40 bg-amber-500/20 text-amber-300 text-[10px] py-0 px-1.5">
+                              <Badge className="border-blue-500/40 bg-blue-500/20 text-blue-300 text-[10px] py-0 px-1.5">
                                 Mais Pedido
                               </Badge>
                             )}
@@ -283,7 +282,7 @@ export const BookingWizard: React.FC = () => {
                           </p>
                           <div className="mt-2 flex items-center gap-3 text-xs text-zinc-400">
                             <span className="flex items-center gap-1">
-                              <Clock className="h-3 w-3 text-amber-400" />
+                              <Clock className="h-3 w-3 text-blue-400" />
                               {service.durationMinutes} min
                             </span>
                           </div>
@@ -291,7 +290,7 @@ export const BookingWizard: React.FC = () => {
                       </div>
 
                       <div className="text-right flex-shrink-0 pl-2">
-                        <span className="text-base font-bold text-amber-400 font-mono">
+                        <span className="text-base font-bold text-blue-400 font-mono">
                           R$ {service.price.toFixed(2).replace(".", ",")}
                         </span>
                       </div>
@@ -314,12 +313,12 @@ export const BookingWizard: React.FC = () => {
                 onClick={() => setSelectedBarberId("any")}
                 className={`flex cursor-pointer items-center justify-between rounded-xl border p-4 transition-all ${
                   selectedBarberId === "any"
-                    ? "border-amber-500 bg-amber-500/10 shadow-sm"
+                    ? "border-blue-500 bg-blue-500/10 shadow-sm"
                     : "border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:bg-zinc-900"
                 }`}
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-700/20 text-amber-400 border border-amber-500/30">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-700/20 text-blue-400 border border-blue-500/30">
                     <Sparkles className="h-6 w-6" />
                   </div>
                   <div>
@@ -330,7 +329,7 @@ export const BookingWizard: React.FC = () => {
                 <div
                   className={`flex h-5 w-5 items-center justify-center rounded-full border ${
                     selectedBarberId === "any"
-                      ? "border-amber-500 bg-amber-500 text-zinc-950"
+                      ? "border-blue-500 bg-blue-600 text-white"
                       : "border-zinc-700"
                   }`}
                 >
@@ -348,7 +347,7 @@ export const BookingWizard: React.FC = () => {
                       onClick={() => setSelectedBarberId(barber.id)}
                       className={`flex cursor-pointer items-start gap-3 rounded-xl border p-3.5 transition-all ${
                         isSelected
-                          ? "border-amber-500 bg-amber-500/10 shadow-sm"
+                          ? "border-blue-500 bg-blue-500/10 shadow-sm"
                           : "border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:bg-zinc-900"
                       }`}
                     >
@@ -360,12 +359,12 @@ export const BookingWizard: React.FC = () => {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between">
                           <h4 className="text-xs font-semibold text-zinc-100 truncate">{barber.name}</h4>
-                          <div className="flex items-center gap-1 text-[11px] text-amber-400 font-semibold">
-                            <Star className="h-3 w-3 fill-amber-400" />
+                          <div className="flex items-center gap-1 text-[11px] text-blue-400 font-semibold">
+                            <Star className="h-3 w-3 fill-blue-400" />
                             {barber.rating}
                           </div>
                         </div>
-                        <p className="text-[11px] text-amber-400/90 font-medium truncate">{barber.role}</p>
+                        <p className="text-[11px] text-blue-400 font-medium truncate">{barber.role}</p>
                         <p className="text-[10px] text-zinc-400 mt-1 line-clamp-2">{barber.bio}</p>
                       </div>
                     </div>
@@ -398,7 +397,7 @@ export const BookingWizard: React.FC = () => {
                           item.isClosed
                             ? "opacity-35 cursor-not-allowed border-zinc-800 bg-zinc-950"
                             : isSelected
-                            ? "border-amber-500 bg-amber-500/20 text-amber-300 font-bold shadow-sm"
+                            ? "border-blue-500 bg-blue-600/20 text-blue-300 font-bold shadow-sm"
                             : "border-zinc-800 bg-zinc-900/80 text-zinc-300 hover:border-zinc-700 hover:bg-zinc-800"
                         }`}
                       >
@@ -420,8 +419,8 @@ export const BookingWizard: React.FC = () => {
                     2. Escolha o Horário:
                   </Label>
                   <span className="text-[11px] text-zinc-400 flex items-center gap-1">
-                    <Clock className="h-3 w-3 text-amber-400" />
-                    Duração total estimada: <strong className="text-amber-400">{totalDuration} min</strong>
+                    <Clock className="h-3 w-3 text-blue-400" />
+                    Duração total estimada: <strong className="text-blue-400">{totalDuration} min</strong>
                   </span>
                 </div>
 
@@ -444,8 +443,8 @@ export const BookingWizard: React.FC = () => {
                               !available
                                 ? "cursor-not-allowed border-zinc-900 bg-zinc-950 text-zinc-600 line-through"
                                 : isSelected
-                                ? "border-amber-500 bg-amber-500 text-zinc-950 font-bold shadow-md shadow-amber-500/20"
-                                : "border-zinc-800 bg-zinc-900/90 text-zinc-200 hover:border-amber-500/50 hover:text-amber-300"
+                                ? "border-blue-500 bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20"
+                                : "border-zinc-800 bg-zinc-900/90 text-zinc-200 hover:border-blue-500/50 hover:text-blue-300"
                             }`}
                           >
                             {slot}
@@ -473,8 +472,8 @@ export const BookingWizard: React.FC = () => {
                               !available
                                 ? "cursor-not-allowed border-zinc-900 bg-zinc-950 text-zinc-600 line-through"
                                 : isSelected
-                                ? "border-amber-500 bg-amber-500 text-zinc-950 font-bold shadow-md shadow-amber-500/20"
-                                : "border-zinc-800 bg-zinc-900/90 text-zinc-200 hover:border-amber-500/50 hover:text-amber-300"
+                                ? "border-blue-500 bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20"
+                                : "border-zinc-800 bg-zinc-900/90 text-zinc-200 hover:border-blue-500/50 hover:text-blue-300"
                             }`}
                           >
                             {slot}
@@ -502,8 +501,8 @@ export const BookingWizard: React.FC = () => {
                               !available
                                 ? "cursor-not-allowed border-zinc-900 bg-zinc-950 text-zinc-600 line-through"
                                 : isSelected
-                                ? "border-amber-500 bg-amber-500 text-zinc-950 font-bold shadow-md shadow-amber-500/20"
-                                : "border-zinc-800 bg-zinc-900/90 text-zinc-200 hover:border-amber-500/50 hover:text-amber-300"
+                                ? "border-blue-500 bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20"
+                                : "border-zinc-800 bg-zinc-900/90 text-zinc-200 hover:border-blue-500/50 hover:text-blue-300"
                             }`}
                           >
                             {slot}
@@ -521,7 +520,7 @@ export const BookingWizard: React.FC = () => {
           {currentStep === 4 && (
             <div className="space-y-4">
               {/* Order Summary Box */}
-              <div className="rounded-xl border border-amber-500/30 bg-amber-950/20 p-3.5 space-y-2">
+              <div className="rounded-xl border border-blue-500/30 bg-blue-950/20 p-3.5 space-y-2">
                 <div className="flex items-center justify-between text-xs text-zinc-300">
                   <span className="text-zinc-400">Serviços:</span>
                   <span className="font-semibold text-zinc-100 text-right">
@@ -530,7 +529,7 @@ export const BookingWizard: React.FC = () => {
                 </div>
                 <div className="flex items-center justify-between text-xs text-zinc-300">
                   <span className="text-zinc-400">Profissional:</span>
-                  <span className="font-semibold text-amber-400">
+                  <span className="font-semibold text-blue-400">
                     {selectedBarberId === "any" ? "Primeiro Barbeiro Disponível" : selectedBarber?.name}
                   </span>
                 </div>
@@ -540,9 +539,9 @@ export const BookingWizard: React.FC = () => {
                     {selectedDate.split("-").reverse().join("/")} às {selectedTimeSlot} ({totalDuration} min)
                   </span>
                 </div>
-                <div className="border-t border-amber-500/20 pt-2 flex items-center justify-between font-bold">
-                  <span className="text-xs text-amber-300">Valor Total:</span>
-                  <span className="text-base text-amber-400 font-mono">
+                <div className="border-t border-blue-500/20 pt-2 flex items-center justify-between font-bold">
+                  <span className="text-xs text-blue-300">Valor Total:</span>
+                  <span className="text-base text-blue-400 font-mono">
                     R$ {totalPrice.toFixed(2).replace(".", ",")}
                   </span>
                 </div>
@@ -559,7 +558,7 @@ export const BookingWizard: React.FC = () => {
                     placeholder="Ex: Carlos Eduardo"
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
-                    className="mt-1 border-zinc-800 bg-zinc-900 text-zinc-100 focus:border-amber-500 text-sm"
+                    className="mt-1 border-zinc-800 bg-zinc-900 text-zinc-100 focus:border-blue-500 text-sm"
                   />
                 </div>
 
@@ -574,7 +573,7 @@ export const BookingWizard: React.FC = () => {
                         placeholder="(11) 99999-9999"
                         value={customerPhone}
                         onChange={handlePhoneChange}
-                        className="border-zinc-800 bg-zinc-900 text-zinc-100 focus:border-amber-500 text-sm pl-9"
+                        className="border-zinc-800 bg-zinc-900 text-zinc-100 focus:border-blue-500 text-sm pl-9"
                       />
                       <Phone className="absolute left-3 top-2.5 h-4 w-4 text-zinc-500" />
                     </div>
@@ -591,7 +590,7 @@ export const BookingWizard: React.FC = () => {
                         placeholder="seu@email.com"
                         value={customerEmail}
                         onChange={(e) => setCustomerEmail(e.target.value)}
-                        className="border-zinc-800 bg-zinc-900 text-zinc-100 focus:border-amber-500 text-sm pl-9"
+                        className="border-zinc-800 bg-zinc-900 text-zinc-100 focus:border-blue-500 text-sm pl-9"
                       />
                       <Mail className="absolute left-3 top-2.5 h-4 w-4 text-zinc-500" />
                     </div>
@@ -608,7 +607,7 @@ export const BookingWizard: React.FC = () => {
                     rows={2}
                     value={customerNotes}
                     onChange={(e) => setCustomerNotes(e.target.value)}
-                    className="mt-1 border-zinc-800 bg-zinc-900 text-zinc-100 focus:border-amber-500 text-xs"
+                    className="mt-1 border-zinc-800 bg-zinc-900 text-zinc-100 focus:border-blue-500 text-xs"
                   />
                 </div>
 
@@ -622,7 +621,7 @@ export const BookingWizard: React.FC = () => {
                       onClick={() => setPaymentMethod("local")}
                       className={`flex cursor-pointer items-center gap-2.5 rounded-xl border p-3 transition-all ${
                         paymentMethod === "local"
-                          ? "border-amber-500 bg-amber-500/10 text-amber-300"
+                          ? "border-blue-500 bg-blue-500/10 text-blue-300"
                           : "border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:border-zinc-700"
                       }`}
                     >
@@ -637,7 +636,7 @@ export const BookingWizard: React.FC = () => {
                       onClick={() => setPaymentMethod("pix")}
                       className={`flex cursor-pointer items-center gap-2.5 rounded-xl border p-3 transition-all ${
                         paymentMethod === "pix"
-                          ? "border-amber-500 bg-amber-500/10 text-amber-300"
+                          ? "border-blue-500 bg-blue-500/10 text-blue-300"
                           : "border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:border-zinc-700"
                       }`}
                     >
@@ -662,7 +661,7 @@ export const BookingWizard: React.FC = () => {
                 <span className="text-[11px] text-zinc-400">
                   {selectedServices.length} {selectedServices.length === 1 ? "serviço" : "serviços"} selecionados:
                 </span>
-                <div className="text-sm font-bold text-amber-400 font-mono">
+                <div className="text-sm font-bold text-blue-400 font-mono">
                   R$ {totalPrice.toFixed(2).replace(".", ",")}
                   <span className="text-[11px] text-zinc-400 font-sans ml-1 font-normal">
                     ({totalDuration} min)
@@ -693,7 +692,7 @@ export const BookingWizard: React.FC = () => {
                   (currentStep === 3 && !selectedTimeSlot)
                 }
                 onClick={() => setCurrentStep((p) => p + 1)}
-                className="bg-amber-500 font-bold text-zinc-950 hover:bg-amber-400 text-xs disabled:opacity-50"
+                className="bg-blue-600 font-bold text-white hover:bg-blue-500 text-xs disabled:opacity-50 shadow-md shadow-blue-600/20"
               >
                 Avançar
                 <ChevronRight className="ml-1 h-3.5 w-3.5" />
@@ -702,7 +701,7 @@ export const BookingWizard: React.FC = () => {
               <Button
                 size="sm"
                 onClick={handleFinishBooking}
-                className="bg-gradient-to-r from-amber-500 to-amber-600 font-bold text-zinc-950 hover:from-amber-400 hover:to-amber-500 text-xs shadow-md shadow-amber-500/20"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 font-bold text-white hover:from-blue-500 hover:to-indigo-500 text-xs shadow-md shadow-blue-500/25"
               >
                 <CheckCircle2 className="mr-1.5 h-4 w-4" />
                 Confirmar Agendamento

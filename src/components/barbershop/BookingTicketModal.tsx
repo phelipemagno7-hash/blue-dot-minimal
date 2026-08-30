@@ -96,14 +96,14 @@ export const BookingTicketModal: React.FC = () => {
     >
       <DialogContent className="max-w-lg border-zinc-800 bg-zinc-950 p-0 text-zinc-100 shadow-2xl overflow-hidden">
         {/* Header Ribbon */}
-        <div className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 px-6 py-4 text-center">
+        <div className="bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 px-6 py-4 text-center">
           <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm">
             <CheckCircle2 className="h-7 w-7 stroke-[2.5]" />
           </div>
           <DialogTitle className="text-xl font-bold text-white">
             Agendamento Confirmado!
           </DialogTitle>
-          <p className="text-xs text-emerald-100 mt-1">
+          <p className="text-xs text-blue-100 mt-1">
             Seu horário foi reservado com sucesso no sistema.
           </p>
         </div>
@@ -111,14 +111,14 @@ export const BookingTicketModal: React.FC = () => {
         {/* Ticket Body */}
         <div className="px-6 py-5 space-y-4 max-h-[75vh] overflow-y-auto">
           {/* Perforated Style Ticket Card */}
-          <div className="relative rounded-2xl border border-dashed border-amber-500/40 bg-zinc-900/90 p-5 shadow-lg">
+          <div className="relative rounded-2xl border border-dashed border-blue-500/40 bg-zinc-900/90 p-5 shadow-lg">
             {/* Top Info */}
             <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
               <div>
                 <span className="text-[10px] uppercase tracking-wider text-zinc-400">Código da Reserva</span>
-                <div className="font-mono text-xl font-extrabold text-amber-400">{app.code}</div>
+                <div className="font-mono text-xl font-extrabold text-blue-400">{app.code}</div>
               </div>
-              <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/30">
+              <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">
                 Confirmado
               </Badge>
             </div>
@@ -135,11 +135,11 @@ export const BookingTicketModal: React.FC = () => {
               </div>
               <div>
                 <span className="text-zinc-400 block">Data:</span>
-                <strong className="text-amber-400">{formattedDate}</strong>
+                <strong className="text-blue-400">{formattedDate}</strong>
               </div>
               <div>
                 <span className="text-zinc-400 block">Horário:</span>
-                <strong className="text-amber-400">{app.timeSlot} ({app.totalDurationMinutes} min)</strong>
+                <strong className="text-blue-400">{app.timeSlot} ({app.totalDurationMinutes} min)</strong>
               </div>
               <div className="col-span-2">
                 <span className="text-zinc-400 block">Profissional:</span>
@@ -151,7 +151,7 @@ export const BookingTicketModal: React.FC = () => {
                   {app.services.map((s) => (
                     <div key={s.id} className="flex justify-between text-zinc-300">
                       <span>• {s.name}</span>
-                      <span className="font-mono text-amber-400/90">R$ {s.price.toFixed(2).replace(".", ",")}</span>
+                      <span className="font-mono text-blue-400">R$ {s.price.toFixed(2).replace(".", ",")}</span>
                     </div>
                   ))}
                 </div>
@@ -168,7 +168,7 @@ export const BookingTicketModal: React.FC = () => {
 
             <div className="flex items-center justify-between pt-1">
               <span className="text-sm font-bold text-zinc-100">Valor Total:</span>
-              <span className="font-mono text-lg font-bold text-amber-400">
+              <span className="font-mono text-lg font-bold text-blue-400">
                 R$ {app.totalPrice.toFixed(2).replace(".", ",")}
               </span>
             </div>
@@ -231,9 +231,9 @@ export const BookingTicketModal: React.FC = () => {
                 variant="outline"
                 size="sm"
                 onClick={handleGoogleCalendar}
-                className="border-zinc-800 bg-zinc-900 text-zinc-300 hover:bg-zinc-800 text-xs"
+                className="border-zinc-800 bg-zinc-900 text-zinc-300 hover:bg-zinc-800 hover:text-blue-400 text-xs"
               >
-                <Calendar className="mr-1.5 h-3.5 w-3.5 text-amber-400" />
+                <Calendar className="mr-1.5 h-3.5 w-3.5 text-blue-400" />
                 Salvar na Agenda
               </Button>
 
