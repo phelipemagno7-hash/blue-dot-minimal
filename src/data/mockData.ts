@@ -1,13 +1,13 @@
 import { Barber, BarberService, BarbershopInfo, Review, Appointment } from "../types/barbershop";
 
 export const BARBERSHOP_INFO: BarbershopInfo = {
-  name: "Navalha de Ouro",
+  name: "Ipaba Barbearia",
   tagline: "Tradição, Estilo e Atendimento Premium",
   address: "Av. Paulista, 1578 - Cerqueira César",
   city: "São Paulo - SP",
   phone: "(11) 3456-7890",
   whatsapp: "5511999998888",
-  instagram: "@barbearianavalhadeouro",
+  instagram: "@ipababarbearia",
   openingHoursWeekdays: "Terça a Sexta: 09:00 às 20:00",
   openingHoursSaturday: "Sábado: 08:30 às 19:00",
   openingHoursSunday: "Domingo e Segunda: Fechado",

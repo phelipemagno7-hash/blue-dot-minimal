@@ -14,16 +14,16 @@ import { AdminDashboard } from "../components/barbershop/AdminDashboard";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Navalha de Ouro | Agendamento Online" },
+      { title: "Ipaba Barbearia | Agendamento Online" },
       {
         name: "description",
         content: "Sistema completo de agendamento online para barbearia com escolha de barbeiro, horário e pagamento.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Navalha de Ouro | Agendamento de Barbearia" },
+      { property: "og:title", content: "Ipaba Barbearia | Agendamento de Barbearia" },
       {
         property: "og:description",
-        content: "Agende seu corte, barba e tratamento na Barbearia Navalha de Ouro com confirmação instantânea no WhatsApp.",
+        content: "Agende seu corte, barba e tratamento na Ipaba Barbearia com confirmação instantânea no WhatsApp.",
       },
     ],
   }),

@@ -78,10 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Navalha de Ouro | Agendamento de Barbearia" },
-      { name: "description", content: "Agende seu corte, barba e tratamento na Barbearia Navalha de Ouro com confirmação instantânea." },
-      { property: "og:title", content: "Navalha de Ouro | Barbearia & Estilo" },
-      { property: "og:description", content: "Agendamento online rápido para corte de cabelo e barba com mestres barbeiros." },
+      { title: "Ipaba Barbearia | Agendamento Online" },
+      { name: "description", content: "Agende seu corte, barba e tratamento na Ipaba Barbearia com confirmação instantânea." },
+      { property: "og:title", content: "Ipaba Barbearia | Barbearia & Estilo" },
+      { property: "og:description", content: "Agendamento online rápido para corte de cabelo e barba na Ipaba Barbearia." },
       { property: "og:type", content: "website" },
     ],
     links: [

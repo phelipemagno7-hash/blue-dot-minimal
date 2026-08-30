@@ -122,7 +122,7 @@ export const HeroSection: React.FC = () => {
                   {/* Overlaid Banner Text */}
                   <div className="absolute bottom-3 left-3 right-3">
                     <span className="text-[11px] font-semibold uppercase tracking-wider text-amber-400">Atendimento Exclusivo</span>
-                    <h3 className="font-serif text-lg font-bold text-zinc-100">Navalha de Ouro Barbershop</h3>
+                    <h3 className="font-serif text-lg font-bold text-zinc-100">{info.name}</h3>
                   </div>
                 </div>
 

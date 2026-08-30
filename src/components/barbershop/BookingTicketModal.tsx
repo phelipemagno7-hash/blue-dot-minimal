@@ -41,7 +41,7 @@ export const BookingTicketModal: React.FC = () => {
   const barberName = barber ? barber.name : "Primeiro Barbeiro Disponível";
 
   const formattedDate = app.date.split("-").reverse().join("/");
-  const simulatedPixKey = `00020126580014br.gov.bcb.pix0136${Math.random().toString(36).substring(2, 15)}5204000053039865405${app.totalPrice.toFixed(2)}5802BR5924NAVALHA DE OURO BARBERS6009SAO PAULO62070503***6304`;
+  const simulatedPixKey = `00020126580014br.gov.bcb.pix0136${Math.random().toString(36).substring(2, 15)}5204000053039865405${app.totalPrice.toFixed(2)}5802BR5915IPABA BARBEARIA6009SAO PAULO62070503***6304`;
 
   const handleCopyPix = () => {
     navigator.clipboard.writeText(simulatedPixKey);
