@@ -1,29 +1,68 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { BarbershopProvider, useBarbershop } from "../context/BarbershopContext";
+import { Navbar } from "../components/barbershop/Navbar";
+import { HeroSection } from "../components/barbershop/HeroSection";
+import { ServicesSection } from "../components/barbershop/ServicesSection";
+import { TeamSection } from "../components/barbershop/TeamSection";
+import { ReviewsSection } from "../components/barbershop/ReviewsSection";
+import { Footer } from "../components/barbershop/Footer";
+import { BookingWizard } from "../components/barbershop/BookingWizard";
+import { BookingTicketModal } from "../components/barbershop/BookingTicketModal";
+import { MyAppointmentsModal } from "../components/barbershop/MyAppointmentsModal";
+import { AdminDashboard } from "../components/barbershop/AdminDashboard";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ponto" },
+      { title: "Navalha de Ouro | Agendamento Online" },
       {
         name: "description",
-        content: "Uma página minimalista com um único ponto azul centralizado.",
+        content: "Sistema completo de agendamento online para barbearia com escolha de barbeiro, horário e pagamento.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Ponto" },
+      { property: "og:title", content: "Navalha de Ouro | Agendamento de Barbearia" },
       {
         property: "og:description",
-        content: "Uma página minimalista com um único ponto azul centralizado.",
+        content: "Agende seu corte, barba e tratamento na Barbearia Navalha de Ouro com confirmação instantânea no WhatsApp.",
       },
-      { name: "twitter:card", content: "summary" },
     ],
   }),
-  component: Index,
+  component: BarbershopApp,
 });
 
-function Index() {
+function BarbershopContent() {
+  const { activeView } = useBarbershop();
+
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-white">
-      <span className="block h-3 w-3 rounded-full bg-blue-600" />
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-amber-500 selection:text-zinc-950 font-sans">
+      <Navbar />
+
+      {activeView === "client" ? (
+        <main>
+          <HeroSection />
+          <ServicesSection />
+          <TeamSection />
+          <ReviewsSection />
+          <Footer />
+        </main>
+      ) : (
+        <main>
+          <AdminDashboard />
+        </main>
+      )}
+
+      {/* Global Modals */}
+      <BookingWizard />
+      <BookingTicketModal />
+      <MyAppointmentsModal />
     </div>
+  );
+}
+
+function BarbershopApp() {
+  return (
+    <BarbershopProvider>
+      <BarbershopContent />
+    </BarbershopProvider>
   );
 }
